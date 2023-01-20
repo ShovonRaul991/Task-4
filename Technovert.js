@@ -1,58 +1,91 @@
+let element = document.getElementById("contactUs");
+let male = document.getElementById('male');
+let female = document.getElementById('female')
+let fullName = document.getElementById('fullname');
+let emailAddress = document.getElementById('emailaddress');
+let org = document.getElementById('org');
+let emailStatus = document.getElementById('required-email');
+let formError = document.getElementById('error-message');
+let nameError = document.getElementById('required-fullname');
+let emailError = document.getElementById('required-email');
+let orgError = document.getElementById('required-org');
+let inputfile = document.getElementById("getfiles");
+let showfile = document.getElementById('selected-file');
+let valid_email = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 function clearForm()
 {
-    var element = document.getElementById("contactUs");
     element.reset();
 }
 
 function addPromo(){
-    var name = document.getElementById("states").value;
-    name = name+ '-PROMO';
-    document.getElementById('promotional').value = name;
+    
+    let state = document.getElementById("states").value;
+    state = state + '-PROMO';
+    document.getElementById('promotional').value = state;
 }
 
 function genderSelection()
 {
-    if(document.getElementById('male').checked==true){
+    if(male.checked==true){
         window.alert("Hello Sir")
     }
-    else if(document.getElementById('female').checked==true){
+    else if(female.checked==true){
         window.alert("Hello lady")
     }
 }
 
 
 
-function nofilledError()
+function contactUs_form_validation()
 {
-    let x = document.getElementById('fullname').value;
-    let y = document.getElementById('emailaddress').value;
-    let z = document.getElementById('org').value;
-    if(x === "" || y==="" || z === "")
+    
+    if(fullName.value ==="" || emailAddress.value==="" || org.value === "" || emailStatus.textContent ==="Email is incorrect.")
     {
-        document.getElementById('error-message').innerHTML =  "Please fill all the required fields below";
+        formError.innerHTML =  "Please fill all the required fields below";
         //window.alert("Please fill all the required fields below");
         event.preventDefault();
     }
-    if(x==="")
+    if(fullName.value==="")
     {
-        document.getElementById('required-fullname').textContent = "Name is required.";
+        nameError.textContent = "Name is required.";
     }
 
-    if(y==="")
+    if(emailAddress.value==="")
     {
-        document.getElementById('required-email').textContent = "Email is required.";
+        emailError.textContent = "Email is required.";
     }
-    if(z ==="")
+    if(emailStatus.value ==="")
     {
-        document.getElementById('required-org').textContent = "*";
+        orgError.textContent = "*";
     }
+    
+    if(emailStatus.textContent ==="Email is correct." && fullName.value!=="" && emailAddress.value!=="" && org.value!==""){
+        window.alert("Form is Submitted");
+    }
+    
+}
+
+function Career_form_validation(){
+    
+
+    if(fullName.value === "" || emailAddress.value==="" || emailStatus.textContent ==="Email is incorrect." )
+    {
+        //document.getElementById('error-message').innerHTML =  "Please fill all the required fields below";
+        window.alert("Please fill all the required fields below");
+        event.preventDefault();
+    }
+    else{
+        window.alert("Form Submitted");
+    }
+
 }
 
 function validateEmail()
 {
-    let mail = document.getElementById('emailaddress').value;
-    let valid_email = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(mail.match(valid_email))
+    
+    
+    if(emailAddress.value.match(valid_email))
     {
         document.getElementById('required-email').textContent = "Email is correct.";
     }
@@ -61,28 +94,14 @@ function validateEmail()
     }
 }
 
-/*
+function fileGet()
+{
+    document.getElementById('getfiles').click();
+}
 
-const sbmt = document.querySelector("submit-button");
-sbmt.addEventListener('click',(e)=>{
-    e.preventDefault();
-    var x = document.getElementById('fullname').value;
-    var y = document.getElementById('emailaddress').value;
-    var z = document.getElementById('org').value;
-    if(x === "" || y==="" || z === "")
-    {
-        document.getElementsByClassName('error-message').innerTEXT =  "Please fill all the required fields below";
-        //window.alert("Please fill all the required fields below");
+inputfile.addEventListener("input", ()=>{
+    if(inputfile.files.length){
+        let showed_file = inputfile.files[0].name;
+        showfile.value = showed_file;
     }
-    else if(x==="")
-    {
-        document.getElementsByClassName('required-fullname').innerHTML = "Name is required.";
-    }
-
-    else if(y==="")
-    {
-        document.getElementsByClassName('required-email').innerHTML = "Email is required."
-    }
-});
-*/
-
+})

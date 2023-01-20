@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>careers</title>
     <link href="Technovert.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="Technovert.js"></script> -->
 </head>
 <body>
     <header class="page-header">
@@ -14,7 +15,7 @@
             <ul class="page-nav-items">
                 <li><a href="Technovert.html">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="Careers.html">Careers</a></li>
+                <li class="selected-tab"><a href="Careers.html">Careers</a></li>
                 <li><a href="contactUs.html">Contact</a></li>       
              </ul>
                  <img src="blog-icon.png" alt="Blog">
@@ -25,51 +26,59 @@
         <p class="form-heading-1">Careers at Technovert</p>
         <p class="career-paragraph-1">We are looking for smart people who love fiddling with code and pour their heart into it. If you are one, we would like to talk to you. Please fill
 the form below and we will get back to you.</p>
-        <form class="form" action="">
+        <form class="career-form">
             <div class="form-element">
-                <div class="col-25">
-                    <label for="">Name</label>
+                <div class="col-25 column-style">
+                    <label>Name</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text" id="fullname">
+                </div>
+                <div class="col-25 column-style">
+                    <span id="required-fullname">*</span>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-25">
-                    <label for="">Email</label>
+                <div class="col-25 column-style">
+                    <label>Email</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text" id="emailaddress" onchange="validateEmail()">
                 </div>
-            </div>
-            <div class="form-element">
-                <div class="col-25">
-                    <label for="">Desired Role</label>
-                </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-25 column-style">
+                    <span id="required-email">*</span>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-25 browse-input">
-                    <label for="">Upload Resume</label>
+                <div class="col-25 column-style">
+                    <label>Desired Role</label>
                 </div>
-                <div class="col-50 browse-input">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text">
                 </div>
-                <div class="col-25-browse browse-input">
-                    <button class="browse" onclick="document.getElementById('getfiles').click()">Browse..</button>
-                    <input id="getfiles"  type="file">
+                <div class="col-25"></div>
+            </div>
+            <div class="form-element">
+                <div class="col-25 browse-input column-style">
+                    <label>Upload Resume</label>
+                </div>
+                <div class="col-50 browse-input column-style">
+                    <input type="text" id="selected-file">
+                </div>
+                <div class="col-25-browse browse-input column-style">
+                    <button class="browse" onclick="fileGet();return false">Browse..</button>
+                    <input id="getfiles" onchange="resumeTake()" type="file">
                 </div>
             </div>
             <div class="form-element">
                 <div class="col-25"></div>
                 <div class="col-50">
-                    <button id="submit" name="submit">Submit</button>
+                    <button id="submit" name="submit" onclick="Career_form_validation()">Submit</button>
                 </div>
             </div>
         </form>
     </div>
+    <script type="text/javascript" src="Technovert.js"></script>
     
 </body>
 </html>

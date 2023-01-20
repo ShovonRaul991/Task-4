@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactUs</title>
     <link href="Technovert.css" rel="stylesheet">
-    <script type="text/javascript" src="Technovert.js"></script>
+    <!-- <script type="text/javascript" src="./Technovert.js"></script> -->
     
 </head>
 <body>
@@ -17,7 +17,7 @@
                 <li><a href="Technovert.html">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="Careers.html">Careers</a></li>
-                <li><a href="contactUs.html">Contact</a></li>       
+                <li class="selected-tab"><a href="contactUs.html">Contact</a></li>       
              </ul>
                  <img src="blog-icon.png" alt="Blog">
         </nav>
@@ -26,73 +26,73 @@
         <p id="error-message"></p>
         <form class="Contact-form" id="contactUs">
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My Name:</label>
+                <div class="col-40 column-style">
+                    <label>My Name:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="fullname">
+                <div class="col-50 column-style">
+                    <input type="text" id="fullname">
                     
                 </div>
-                <div class="col-25">
+                <div class="col-25 column-style">
                     <span id="required-fullname">*</span>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">Gender:</label>
+                <div class="col-40 column-style">
+                    <label>Gender:</label>
                 </div>
                 <div>
-                    <input type="radio" id="male" name="gender" value="male" onclick="genderSelection()">
+                    <input type="radio" id="male" name="gender" value="male" onchange="genderSelection()">
                     <label for="Male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female" onclick="genderSelection()">
+                    <input type="radio" id="female" name="gender" value="female" onchange="genderSelection()">
                     <label for="Female">Female</label><br>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My Email Address:</label>
+                <div class="col-40 column-style">
+                    <label>My Email Address:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="emailaddress" onchange="validateEmail()">
+                <div class="col-50 column-style">
+                    <input type="text" id="emailaddress" onchange="validateEmail()">
                 </div>
-                <div class="col-25">
+                <div class="col-25 column-style">
                     <span id="required-email">*</span>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My Telephone Number:</label>
+                <div class="col-40 column-style">
+                    <label>My Telephone Number:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text">
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My Organization name:</label>
+                <div class="col-40 column-style">
+                    <label>My Organization name:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="org">
+                <div class="col-50 column-style">
+                    <input type="text" id="org">
                 </div>
-                <div class="col-25">
+                <div class="col-25 column-style">
                     <span id="required-org">*</span>
                 </div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My City:</label>
+                <div class="col-40 column-style">
+                    <label>My City:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text">
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My State or Province:</label>
+                <div class="col-40 column-style">
+                    <label>My State or Province:</label>
                 </div>
-                <div class="col-50">
+                <div class="col-50 column-style">
                     <select name="select-box" id="states" class="states" onchange="addPromo()">
                         <option value="default" selected>Select State or Province</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -133,56 +133,59 @@
                         <option value="West Bengal">West Bengal</option>
                     </select>
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">Please Contact Me By:</label>
+                <div class="col-40 column-style">
+                    <label>Please Contact Me By:</label>
                 </div>
                 <div>
                     <input type="radio" name="radio-2" id="email"><span></span>
-                    <label for="">Email</label><br>
+                    <label>Email</label><br>
                     <input type="radio" name="radio-2" id="phone">
-                    <label for="">Phone</label><br>
+                    <label>Phone</label><br>
                     <input type="radio" name="radio-2" id="both">
-                    <label for="">Both</label>
+                    <label>Both</label>
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">Promotion Code:</label>
+                <div class="col-40 column-style">
+                    <label>Promotion Code:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="promotional" class="promotional">
+                <div class="col-50 column-style">
+                    <input type="text" id="promotional" class="promotional">
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">Optional Information:</label>
+                <div class="col-40 column-style">
+                    <label>Optional Information:</label>
                 </div>
             </div>
             <p class="optional-text">This information is optional but it help us to serve you better.</p>
             <div class="form-element">
-                <div class="col-40">
-                    <label for="">My Website Address is:</label>
+                <div class="col-40 column-style">
+                    <label>My Website Address is:</label>
                 </div>
-                <div class="col-50">
-                    <input type="text" name="" id="">
+                <div class="col-50 column-style">
+                    <input type="text">
                 </div>
-                <div class="col-25"></div>
+                <div class="col-25 column-style"></div>
             </div>
             <p>Tell us more about your organisation:</p>
-            <textarea class="textarea" name="" id="textarea" cols="45" rows="5"></textarea>
+            <textarea class="textarea" id="textarea" cols="45" rows="5"></textarea>
             <p>What I'd really like to know is:</p>
-            <textarea class="textarea" name="" id="textarea" cols="45" rows="5"></textarea>
+            <textarea class="textarea" id="textarea" cols="45" rows="5"></textarea>
             <br>
-            <button value="Send Message" name="submit-button" id="submit-button" class="submit-button" onclick="nofilledError()">Send Message</button>
-            <!-- <button class="submit-button" onclick="nofilledError()">Send Message</button> -->
+            <input type="submit" value="Send Message" id="submit-button" class="submit-button" onclick="contactUs_form_validation()">
+            <!--<button value="Send Message" name="submit-button" id="submit-button" class="submit-button" onclick="nofilledError()">Send Message</button>
+             <button class="submit-button" onclick="nofilledError()">Send Message</button> -->
             <button class="reset-button" onclick="clearForm()">Clear Form</button>
             
         </form>
     </div>
+    <script type="text/javascript" src="./Technovert.js"></script>
+
 </body>
 </html>

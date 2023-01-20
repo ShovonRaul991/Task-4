@@ -10,7 +10,7 @@ body{
     margin:0;
     padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 499;
+    font-weight: 400;
     font-size: 14px;
 }
 
@@ -41,31 +41,32 @@ body{
     display: inline-flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0px;
+    border: 5px solid transparent;
 }
 
-
 .page-nav-items a{
-    display: inline-flex;
-    padding: 5px 25px 7px ;
+    padding: 5px 25px 7px;
     font-weight: bolder;
     color:white;
-    font-size: 16px;
+    font-size: 17px;
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
+    
 }
 
-.page-nav-items a:hover{
+.page-nav-items a:hover, .selected-tab a{
     background-color: #FF9900;
     border-left: #fff 5px solid;
-    color: black;
-
+    color: #333333;
 }
+
 
 .page-navigation img{
     padding: 5px;
 }
+
 
 .home-news-content{
     margin-top: 22px;
@@ -141,24 +142,18 @@ body{
 .col-25{
     float: left;
     width: 25%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: bold;
+    
 }
 
 .col-40{
     float: left;
     width: 28%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: bold;
+    
 }
 .col-50{
     float: right;
     width: 32%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-weight: bold;
+    
 }
 
 .col-50 input, select{
@@ -179,11 +174,16 @@ label{
     padding: 5px 20px;
 }
 
+.column-style{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 .col-25-browse{
     float: right;
     width: 25%;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    
 }
 
 .col-25-browse input{
@@ -200,6 +200,7 @@ textarea{
 
 #required-fullname, #required-email, #required-org{
     color: red;
+    font-weight: lighter;
 }
 
 #getfiles{
@@ -213,7 +214,7 @@ textarea{
 }
 
 .browse-input{
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     height: 30px;
 }
 
