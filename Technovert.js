@@ -37,7 +37,7 @@ function genderSelection()
 
 
 
-function contactUs_form_validation()
+function contactUsFormValidation()
 {
     
     if(fullName.value ==="" || emailAddress.value==="" || org.value === "" || emailStatus.textContent ==="Email is incorrect.")
@@ -46,6 +46,7 @@ function contactUs_form_validation()
         //window.alert("Please fill all the required fields below");
         event.preventDefault();
     }
+    
     if(fullName.value==="")
     {
         nameError.textContent = "Name is required.";
@@ -55,10 +56,11 @@ function contactUs_form_validation()
     {
         emailError.textContent = "Email is required.";
     }
-    if(emailStatus.value ==="")
+    if(org.value ==="")
     {
-        orgError.textContent = "*";
+        orgError.textContent = "Organisation needed";
     }
+    
     
     if(emailStatus.textContent ==="Email is correct." && fullName.value!=="" && emailAddress.value!=="" && org.value!==""){
         window.alert("Form is Submitted");
@@ -66,7 +68,7 @@ function contactUs_form_validation()
     
 }
 
-function Career_form_validation(){
+function CareerFormValidation(){
     
 
     if(fullName.value === "" || emailAddress.value==="" || emailStatus.textContent ==="Email is incorrect." )
@@ -87,10 +89,33 @@ function validateEmail()
     
     if(emailAddress.value.match(valid_email))
     {
-        document.getElementById('required-email').textContent = "Email is correct.";
+        emailError.textContent = "Email is correct.";
+    }
+    else if(emailAddress.value==="")
+    {
+        emailError.textContent = "Email is required.";
     }
     else{
-        document.getElementById('required-email').textContent = "Email is incorrect.";
+        emailError.textContent = "Email is incorrect.";
+    }
+}
+
+function validName(){
+    if(fullName.value===""){
+        nameError.textContent = "Name is required.";
+    }
+    
+    else{
+        nameError.textContent = "*";
+    }
+}
+
+function validOrg(){
+    if(org.value ===""){
+        orgError.textContent = "Organisation needed";
+    }
+    else{
+        orgError.textContent = "*";
     }
 }
 
@@ -98,6 +123,16 @@ function fileGet()
 {
     document.getElementById('getfiles').click();
 }
+
+/*
+function resueTake(){
+    if(inputfile.files.length){
+        let showed_file = inputfile.files[0].name;
+        showfile.value = showed_file;
+    }
+}
+*/
+
 
 inputfile.addEventListener("input", ()=>{
     if(inputfile.files.length){

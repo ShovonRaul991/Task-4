@@ -30,7 +30,7 @@
                     <label>My Name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="fullname">
+                    <input type="text" id="fullname" oninput="validName()">
                     
                 </div>
                 <div class="col-25 column-style">
@@ -53,7 +53,7 @@
                     <label>My Email Address:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="emailaddress" onchange="validateEmail()">
+                    <input type="text" id="emailaddress" oninput="validateEmail()">
                 </div>
                 <div class="col-25 column-style">
                     <span id="required-email">*</span>
@@ -73,7 +73,7 @@
                     <label>My Organization name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="org">
+                    <input type="text" id="org" oninput="validOrg()">
                 </div>
                 <div class="col-25 column-style">
                     <span id="required-org">*</span>
@@ -178,7 +178,7 @@
             <p>What I'd really like to know is:</p>
             <textarea class="textarea" id="textarea" cols="45" rows="5"></textarea>
             <br>
-            <input type="submit" value="Send Message" id="submit-button" class="submit-button" onclick="contactUs_form_validation()">
+            <input type="submit" value="Send Message" id="submit-button" class="submit-button" onclick="contactUsFormValidation()">
             <!--<button value="Send Message" name="submit-button" id="submit-button" class="submit-button" onclick="nofilledError()">Send Message</button>
              <button class="submit-button" onclick="nofilledError()">Send Message</button> -->
             <button class="reset-button" onclick="clearForm()">Clear Form</button>
