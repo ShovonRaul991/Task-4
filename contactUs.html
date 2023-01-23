@@ -30,7 +30,7 @@
                     <label>My Name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="fullname" oninput="validName()">
+                    <input type="text" id="fullname" oninput="validateName()">
                     
                 </div>
                 <div class="col-25 column-style">
@@ -73,7 +73,7 @@
                     <label>My Organization name:</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="org" oninput="validOrg()">
+                    <input type="text" id="org" oninput="validateOrg()">
                 </div>
                 <div class="col-25 column-style">
                     <span id="required-org">*</span>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-50 column-style">
                     <select name="select-box" id="states" class="states" onchange="addPromo()">
-                        <option value="default" selected>Select State or Province</option>
+                        <option value="">Select State or Province</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>

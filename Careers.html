@@ -32,7 +32,7 @@ the form below and we will get back to you.</p>
                     <label>Name</label>
                 </div>
                 <div class="col-50 column-style">
-                    <input type="text" id="fullname" oninput="validName()">
+                    <input type="text" id="fullname" oninput="validateName()">
                 </div>
                 <div class="col-25 column-style">
                     <span id="required-fullname">*</span>
@@ -73,7 +73,7 @@ the form below and we will get back to you.</p>
             <div class="form-element">
                 <div class="col-25"></div>
                 <div class="col-50">
-                    <button id="submit" name="submit" onclick="CareerFormValidation()">Submit</button>
+                    <input type="submit" id="submit" value="Submit" onclick="CareerFormValidation()"></input>
                 </div>
             </div>
         </form>

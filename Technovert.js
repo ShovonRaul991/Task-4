@@ -1,4 +1,4 @@
-let element = document.getElementById("contactUs");
+let contactForm = document.getElementById("contactUs");
 let male = document.getElementById('male');
 let female = document.getElementById('female')
 let fullName = document.getElementById('fullname');
@@ -11,18 +11,23 @@ let emailError = document.getElementById('required-email');
 let orgError = document.getElementById('required-org');
 let inputfile = document.getElementById("getfiles");
 let showfile = document.getElementById('selected-file');
-let valid_email = /^[a-zA-Z0-9. ]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let validemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 function clearForm()
 {
-    element.reset();
+    contactForm.reset();
 }
 
 function addPromo(){
     
     let state = document.getElementById("states").value;
-    state = state + '-PROMO';
-    document.getElementById('promotional').value = state;
+    if(state !==""){
+        state = state + '-PROMO';
+        document.getElementById('promotional').value = state;
+    }
+    else{
+        document.getElementById('promotional').value = "";
+    }
 }
 
 function genderSelection()
@@ -40,46 +45,31 @@ function genderSelection()
 function contactUsFormValidation()
 {
     
-    if(fullName.value ==="" || emailAddress.value==="" || org.value === "" || emailStatus.textContent ==="Email is incorrect.")
-    {
+    validateName();
+    validateEmail();
+    validateOrg();
+
+    if(!validateName() || !validateEmail() || !validateOrg()){
         formError.innerHTML =  "Please fill all the required fields below";
-        //window.alert("Please fill all the required fields below");
         event.preventDefault();
     }
-    
-    if(fullName.value==="")
-    {
-        nameError.textContent = "Name is required.";
-    }
-
-    if(emailAddress.value==="")
-    {
-        emailError.textContent = "Email is required.";
-    }
-    if(org.value ==="")
-    {
-        orgError.textContent = "Organisation needed";
-    }
-    
-    
-    if(emailStatus.textContent ==="Email is correct." && fullName.value!=="" && emailAddress.value!=="" && org.value!==""){
+    else{
         window.alert("Form is Submitted");
     }
     
 }
 
 function CareerFormValidation(){
-    
 
-    if(fullName.value === "" || emailAddress.value==="" || emailStatus.textContent ==="Email is incorrect." )
-    {
-        //document.getElementById('error-message').innerHTML =  "Please fill all the required fields below";
-        window.alert("Please fill all the required fields below");
-        event.preventDefault();
-    }
-    else{
-        window.alert("Form Submitted");
-    }
+   validateName();
+   validateEmail();
+   if(!validateName() || !validateEmail()){
+    window.alert("Please fill all the required fields below");
+    event.preventDefault();
+   }
+   else{
+    window.alert("Form Submitted");
+   }
 
 }
 
@@ -87,35 +77,42 @@ function validateEmail()
 {
     
     
-    if(emailAddress.value.match(valid_email))
+    if(emailAddress.value.match(validemail))
     {
-        emailError.textContent = "Email is correct.";
+        emailError.textContent = "*";
+        return true;
     }
-    else if(emailAddress.value==="")
+    else if(!emailAddress.value)
     {
         emailError.textContent = "Email is required.";
+        return false;
     }
     else{
         emailError.textContent = "Email is incorrect.";
+        return false;
     }
 }
 
-function validName(){
-    if(fullName.value===""){
+function validateName(){
+    if(!fullName.value){
         nameError.textContent = "Name is required.";
+        return false;
     }
     
     else{
         nameError.textContent = "*";
+        return true;
     }
 }
 
-function validOrg(){
-    if(org.value ===""){
+function validateOrg(){
+    if(!org.value){
         orgError.textContent = "Organisation needed";
+        return false;
     }
     else{
         orgError.textContent = "*";
+        return true;
     }
 }
 
@@ -125,18 +122,11 @@ function fileGet()
 }
 
 /*
-function resueTake(){
-    if(inputfile.files.length){
-        let showed_file = inputfile.files[0].name;
-        showfile.value = showed_file;
-    }
-}
-*/
-
-
 inputfile.addEventListener("input", ()=>{
     if(inputfile.files.length){
-        let showed_file = inputfile.files[0].name;
-        showfile.value = showed_file;
+        //console.log(inputfile.files);
+        let showedfile = inputfile.files[0].name;
+        showfile.value = showedfile;
     }
 })
+*/
