@@ -1,18 +1,18 @@
-let contactForm = document.getElementById("contactUs");
-let male = document.getElementById('male');
-let female = document.getElementById('female')
-let fullName = document.getElementById('fullname');
-let emailAddress = document.getElementById('emailaddress');
-let org = document.getElementById('org');
-let emailStatus = document.getElementById('required-email');
-let formError = document.getElementById('error-message');
-let nameError = document.getElementById('required-fullname');
-let emailError = document.getElementById('required-email');
-let orgError = document.getElementById('required-org');
-let inputfile = document.getElementById("getfiles");
-let showfile = document.getElementById('selected-file');
+let contactForm = document.getElementById("ContactUs");
+let male = document.getElementById('Male');
+let female = document.getElementById('Female')
+let fullName = document.getElementById('FullName');
+let emailAddress = document.getElementById('EmailAddress');
+let org = document.getElementById('Org');
+let emailStatus = document.getElementById('RequiredEmail');
+let formError = document.getElementById('ErrorMessage');
+let nameError = document.getElementById('RequiredFullname');
+let emailError = document.getElementById('RequiredEmail');
+let orgError = document.getElementById('RequiredOrg');
+let inputFile = document.getElementById("GetFiles");
+let showFile = document.getElementById('SelectedFile');
 //let validemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-let validemail = /^[0-9a-z.\s+_]+@[0-9a-z-.+]+\.[a-z]{2,4}$/;
+let validEmail = /^[0-9a-z.\s+_]+@[0-9a-z-.+]+\.[a-z]{2,4}$/;
 
 function clearForm()
 {
@@ -21,13 +21,13 @@ function clearForm()
 
 function addPromo(){
     
-    let state = document.getElementById("states").value;
+    let state = document.getElementById("States").value;
     if(state !==""){
         state = state + '-PROMO';
-        document.getElementById('promotional').value = state;
+        document.getElementById('Promotional').value = state;
     }
     else{
-        document.getElementById('promotional').value = "";
+        document.getElementById('Promotional').value = "";
     }
 }
 
@@ -60,7 +60,7 @@ function contactUsFormValidation()
     
 }
 
-function CareerFormValidation(){
+function careerFormValidation(){
 
    validateName();
    validateEmail();
@@ -78,7 +78,7 @@ function validateEmail()
 {
     
     
-    if(emailAddress.value.match(validemail))
+    if(emailAddress.value.match(validEmail))
     {
         emailError.textContent = "*";
         return true;
@@ -119,7 +119,7 @@ function validateOrg(){
 
 function fileGet()
 {
-    document.getElementById('getfiles').click();
+    document.getElementById('GetFiles').click();
 }
 
 /*
